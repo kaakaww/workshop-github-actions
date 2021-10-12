@@ -76,6 +76,7 @@ When CodeQL has finished, examine the results in the **Security** section under 
 [Sign up](https://app.stackhawk.com) for a StackHawk Developer account. Follow the Get Started flow to create your StackHawk API key and first application.
 
 ### Stash the API Key
+
 Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **Settings** section, and find **Secrets** in the left pane.
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
@@ -131,7 +132,7 @@ You just automated SCA, SAST, and DAST scanning with GitHub Actions!
 
 Read more about [GitHub Actions](https://docs.github.com/en/actions), [CodeQL](https://codeql.github.com/docs/), and [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates). And check out the [GitHub Actions Marketplace](https://github.com/marketplace?type=actions), where you can find other Actions to build out your pipeline.
 
-Finally, here are some additional resources for tuning StackHawk for scanning *your* applications.
+Finally, here are some additional resources for tuning StackHawk to scan *your* applications.
 
 * [HawkDocs](https://docs.stackhawk.com), where you can read all the details on how to configure and run HawkScan in your environment.
 * [Authenticated Scanning](https://docs.stackhawk.com/hawkscan/authenticated-scanning.html) - Guides for authenticating HawkScan to your application for deeper scans.
