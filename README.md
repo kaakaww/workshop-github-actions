@@ -80,13 +80,13 @@ Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
 
-### Save the `stackhawk.yml` Configuration File
+### Commit the `stackhawk.yml` Configuration File
 
 Download the `stackhawk.yml` file that you created in the Get Started flow in the StackHawk platform. Copy the contents into a new file at the base of your repo named `stackhawk.yml`. Commit the file.
 
-### Add StackHawk to your Build and Test Workflow
+### Add a StackHawk Scan to your Build and Test Workflow
 
-Update your Build and Test workflow, adding the StackHawk Action:
+Update your Build and Test workflow. Add a step to start the `vuln_node_express`, and a step to run HawkScan using the StackHawk Action at the end:
 
 ```yaml
 # .github/workflows/build-and-test.yml
