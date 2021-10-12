@@ -73,11 +73,18 @@ When CodeQL has finished, examine the results in the **Security** section under 
 
 ## Step 4: Dynamic App Scanning with StackHawk 🦅
 
-[Sign up](https://app.stackhawk.com) for a StackHawk Developer account. Follow the Getting Started flow to create your first application and StackHawk API key.
+[Sign up](https://app.stackhawk.com) for a StackHawk Developer account. Follow the Get Started flow to create your StackHawk API key and first application.
 
+### Stash the API Key
 Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **Settings** section, and find **Secrets** in the left pane.
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
+
+### Save the `stackhawk.yml` Configuration File
+
+Download the `stackhawk.yml` file that you created in the Get Started flow in the StackHawk platform. Copy the contents into a new file at the base of your repo named `stackhawk.yml`. Commit the file.
+
+### Add StackHawk to your Build and Test Workflow
 
 Update your Build and Test workflow, adding the StackHawk Action:
 
@@ -112,7 +119,9 @@ jobs:
 
 Commit this change.
 
-Go to the **Actions** section of your repo, and watch your updated Build and Test workflow run.
+### Check your Scan Results
+
+Go to the **Actions** section of your repo, and watch your updated Build and Test workflow run. Examine the **Run HawkScan** step console logs.
 
 [Check your scan results](https://app.stackhawk.com/scans) on the StackHawk platform.
 
