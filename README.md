@@ -1,122 +1,97 @@
-# Workshop Cheat Sheet: Automating Application Security Testing in GitHub Actions
+# Workshop Guidebook: Automating Application Security Testing in GitHub Actions
 
-This workshop is designed to help you get started with application security testing in GitHub Actions. Participants get hands-on experience with
+This workshop is designed to help you get started with application security testing in GitHub Actions. Participants get hands-on experience with:
 
 * GitHub Actions workflows
 * Dependabot software composition analysis (SCA)
 * CodeQL static application security testing (SAST) scanning
 * StackHawk dynamic application security test (DAST) scanning
 
+You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1875pG-f2LRt9e1AlLjwQvPg6CyqiPeGqQ4_dQdzkkoo/edit?usp=sharing).
+
+Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v=DM-J3eayoiw) on your own schedule.
+
 ## Prerequisites
 
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Install](https://discord.com/) Discord
   * [Join](https://discord.gg/2XsFrkMVdc) the GitNation Server
-  * Join us in **#oct12-js-security-testing** – it's under the ⚡VUE.JS FREE WORKSHOPS category
-* Docker -- [install](https://docs.docker.com/get-docker) the latest version
-* HawkScan -- ```docker pull stackhawk/hawkscan```
-* The GitHub CLI
-  * [Install](https://github.com/cli/cli#installation) the CLI (`gh`)
-  * Login -- ```gh auth login```
+  * Find us in the **#oct12-js-security-testing** channel under the **⚡ VUE.JS FREE WORKSHOPS** category
+* GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
-## 1: Continuous Integration Workflows in GitHub Actions
+## Step 1: Continuous Integration Workflows in GitHub Actions
 
-Fork the [`vuln_node_express`](https://github.com/kaakaww/vuln_node_express) app repository with the GitHub CLI:
+Fork the [`vuln_node_express`](https://github.com/kaakaww/vuln_node_express) app:
 
-```shell
-gh repo fork kaakaww/vuln_node_express
-```
+<https://github.com/kaakaww/vuln_node_express>
 
-...or from the website:
-
-```shell
-open https://github.com/kaakaww/vuln_node_express
-```
-
-Clone it to your workstaion with the GitHub CLI:
-
-```shell
-gh repo clone vuln_node_express
-```
-
-...or with `git`:
-
-```shell
-git clone <YOUR-GITHUB-ORG>/vuln_node_express
-```
-
-Enter your cloned project directory:
-
-```shell
-cd vuln_node_express
-```
-
-Create a file, `.github/workflows/build-and-scan.yml`, in your project repo with the following contents:
+Go to the **Code** section of your newly forked repository in GitHub. Create a new file using the **Add file --> Create new file** button. Name the file `.github/workflows/build-and-test.yml`, and add the following contents:
 
 ```yaml
-# .github/workflows/build-and-scan.yml
-name: Build and Scan
+# .github/workflows/build-and-test.yml
+name: Build and Test
 on:
-  push:
+  push: 
+    branches:
+      - main
   pull_request:
 jobs:
-  build:
+  build-and-test:
+    name: Build and test
     runs-on: ubuntu-20.04
     steps:
-      - name: Check Out Code
+      - name: Checkout code
         uses: actions/checkout@v2
       - name: Install Node.js 14.x
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm clean-install
 ```
 
-Push your changes to GitHub:
+Commit the change.
 
-```shell
-git add .
-git commit -m "Added an Actions workflow"
-git push
-```
+Go to the **Actions** section of your repository, and you should see the new workflow running.
 
-## 2: Dependency Scanning with Dependabot
+## Step 2: Dependency Scanning with Dependabot
 
-See this guide to enable Dependabot easily:
-<https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/enabling-and-disabling-version-updates>
+Go to the **Settings** section of your repo, and find the **Security & analysis** section in the left pane. Enable the **Dependency graph**, **Dependabot alerts**, and **Dependabot security updates** features in this section. Dependabot is now configured.
 
-## 3: Static Code Analysis with CodeQL
+Go to the **Security** section of your GitHub repo, and click into the **Dependabot alerts** on the left pane. Examine some of the dependency alerts, and see if you can resolve them.
 
-See this guide to enable CodeQL in Actions
-<https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/setting-up-code-scanning-for-a-repository#setting-up-code-scanning-using-actions>
+## Step 3: Static Code Analysis with CodeQL
 
-## 4: Dynamic App Scanning with StackHawk 🦅
+Go to the **Security** section of your repo. Click on **Set up code scanning**. Find the **CodeQL Analysis** code scanning tool, and click **Set up this workflow**.
 
-Sign up for a StackHawk Developer account. Follow the Getting Started flow to create your first application and StackHawk API key.
+Examine the GitHub Actions workflow, `.github/workflows/codeql-analysis.yml`, and commit it to the repo.
 
-```bash
-open https://app.stackhawk.com
-```
+Now go to the **Actions** section of your repo, and watch your new CodeQL workflow run.
 
-Stash your StackHawk API key in GitHub Secrets:
+When CodeQL has finished, examine the results in the **Security** section under **Code scanning alerts** in the left pane.
 
-```shell
-gh secret set HAWK_API_KEY --repos="vuln_node_express"
-```
+## Step 4: Dynamic App Scanning with StackHawk 🦅
 
-Update Actions workflow, adding the StackHawk Action:
+[Sign up](https://app.stackhawk.com) for a StackHawk Developer account. Follow the Getting Started flow to create your first application and StackHawk API key.
+
+Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **Settings** section, and find **Secrets** in the left pane.
+
+Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
+
+Update your Build and Test workflow, adding the StackHawk Action:
 
 ```yaml
-# .github/workflows/build-and-scan.yml
-name: Build and Scan
+# .github/workflows/build-and-test.yml
+name: Build and Test
 on:
-  push:
+  push: 
+    branches:
+      - main
   pull_request:
 jobs:
-  build:
+  build-and-test:
+    name: Build and test
     runs-on: ubuntu-20.04
     steps:
       - name: Check Out Code
@@ -135,12 +110,21 @@ jobs:
           apiKey: ${{ secrets.HAWK_API_KEY }}
 ```
 
-## All Done
+Commit this change.
 
-Congratulations!
+Go to the **Actions** section of your repo, and watch your updated Build and Test workflow run.
 
-Now try it on *your* application! Here are some additional resources to help you on your way.
+[Check your scan results](https://app.stackhawk.com/scans) on the StackHawk platform.
+
+## Workshop Complete
+
+You just automated SCA, SAST, and DAST scanning with GitHub Actions!
+
+Read more about [GitHub Actions](https://docs.github.com/en/actions), [CodeQL](https://codeql.github.com/docs/), and [Dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/configuration-options-for-dependency-updates). And check out the [GitHub Actions Marketplace](https://github.com/marketplace?type=actions), where you can find other Actions to build out your pipeline.
+
+Finally, here are some additional resources for tuning StackHawk for scanning *your* applications.
 
 * [HawkDocs](https://docs.stackhawk.com), where you can read all the details on how to configure and run HawkScan in your environment.
+* [Authenticated Scanning](https://docs.stackhawk.com/hawkscan/authenticated-scanning.html) - Guides for authenticating HawkScan to your application for deeper scans.
 * [Continuous Integration](https://docs.stackhawk.com/continuous-integration/), where you can see our guides for integrating HawkScan with the most popular CI/CD systems.
-* [StackHawk Blog](https://www.stackhawk.com/blog), where you can find deep-dives on use cases for StackHawk.
+* [StackHawk Blog](https://www.stackhawk.com/blog), with technical tips, tricks, and walkthroughs to help you secure and test your applications.
