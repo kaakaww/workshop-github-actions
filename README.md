@@ -9,15 +9,15 @@ This workshop is designed to help you get started with application security test
 
 You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1875pG-f2LRt9e1AlLjwQvPg6CyqiPeGqQ4_dQdzkkoo/edit?usp=sharing).
 
-Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v=DM-J3eayoiw) on your own schedule.
+Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v=TI7E14vYWtU) on your own schedule.
 
 ## Prerequisites
 
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Join](https://discord.gg/2XsFrkMVdc) the GitNation Server
-  * Find us in the **#oct12-js-security-testing** channel under the **⚡ VUE.JS FREE WORKSHOPS** category
+  * [Join](https://discord.gg/WM3GK6PVGV) the GitNation Server
+  * Find us in the **#nov16-js-security-testing** channel under the **🐞 TESTJS WORKSHOPS** category
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
