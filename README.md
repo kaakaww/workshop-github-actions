@@ -16,8 +16,8 @@ Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Join](https://discord.gg/ekrCgSTR93) the GitNation Server
-  * Find us in the **#nov16-js-security-testing** channel under the **🐞 TESTJS WORKSHOPS** category
+  * [Join](https://discord.gg/8PdzXAnF) the StackHawk Server
+  * Find us in the **#general** channel
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
