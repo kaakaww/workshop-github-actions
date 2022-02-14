@@ -16,8 +16,8 @@ Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Join](https://discord.gg/8PdzXAnF) the StackHawk Server
-  * Find us in the **#general** channel
+  * [Join](https://discord.gg/S2F7HVEw6y) the StackHawk Server
+  * Find us in the **##js-security-testing-in-github-actions** channel
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
