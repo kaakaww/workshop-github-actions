@@ -7,7 +7,7 @@ This workshop is designed to help you get started with application security test
 * CodeQL static application security testing (SAST) scanning
 * StackHawk dynamic application security test (DAST) scanning
 
-You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1875pG-f2LRt9e1AlLjwQvPg6CyqiPeGqQ4_dQdzkkoo/edit?usp=sharing).
+You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1JyTtkqH9WmerChSuoPpOQBsuPVv0bzYRENkG-OAJxKg/edit?usp=sharing).
 
 Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v=TI7E14vYWtU) on your own schedule.
 
@@ -16,8 +16,8 @@ Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Join](https://discord.gg/S2F7HVEw6y) the StackHawk Server
-  * Find us in the **##js-security-testing-in-github-actions** channel
+  * [Join](https://bit.ly/zapcon-discord) the ZAPCon Server
+  * Find us in the **#automated-security-testing-with-github-actions** channel
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
@@ -113,7 +113,7 @@ jobs:
       - name: Daemonize our Node API service
         run: nohup npm run start &
       - name: Run HawkScan
-        uses: stackhawk/hawkscan-action@v1.3.1
+        uses: stackhawk/hawkscan-action@v1.3.4
         with:
           apiKey: ${{ secrets.HAWK_API_KEY }}
 ```
