@@ -47,8 +47,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
+          cache: npm
       - name: Install dependencies
-        run: npm clean-install
+        run: npm install
+      - name: Run unit tests
+        run: npm test
 ```
 
 Commit the change.
@@ -108,10 +111,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      - name: Install Dependencies
-        run: npm clean-install
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Run unit tests
+        run: npm test
       - name: Daemonize our Node API service
-        run: nohup npm run start &
+        run: npm run start &
       - name: Run HawkScan
         uses: stackhawk/hawkscan-action@v1.3.4
         with:
@@ -125,6 +131,17 @@ Commit this change.
 Go to the **Actions** section of your repo, and watch your updated Build and Test workflow run. Examine the **Run HawkScan** step console logs.
 
 [Check your scan results](https://app.stackhawk.com/scans) on the StackHawk platform.
+
+### Set a HawkScan Failure Threshold
+
+To make the HawkScan break your build for high severity alerts, add the following section to the end of your `stackhawk.yml` configuration file at the root of your repository.
+
+```yaml
+hawk:
+  failureThreshold: high
+```
+
+Rerun your GitHub Actions workflow, and check to make sure the scan succeeds and the Action run fails due to your new failure threshold being exceeded. Triage all high severity alerts in the StackHawk platform. After triaging all high severity alerts, you should be able to rerun the Actions workflow, and the workflow should succeed.
 
 ## Workshop Complete
 
