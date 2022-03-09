@@ -105,7 +105,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-20.04
     steps:
-      - name: Check Out Code
+      - name: Checkout code
         uses: actions/checkout@v2
       - name: Install Node.js 14.x
         uses: actions/setup-node@v2
