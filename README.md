@@ -84,6 +84,8 @@ Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
 
+Complete the steps of the Create an App flow with an application name of: `vuln-node-express`, an environment of: `Development`, and a host url of: `http://localhost:3000/`.
+
 ### Commit the `stackhawk.yml` Configuration File
 
 Download the `stackhawk.yml` file that you created in the Get Started flow in the StackHawk platform. Copy the contents into a new file at the base of your repo named `stackhawk.yml`. Commit the file.
