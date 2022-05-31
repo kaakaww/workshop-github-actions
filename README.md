@@ -17,7 +17,7 @@ To get the most out of this workshop, make sure you have the following prerequis
 
 * Discord
   * Join the GitNation Tech Communities Discord server!
-  * Find us in the **#devops-workshops** channel, **JS Security Testing in GitHub Actions** thread.
+  * Find us in the **#rs-workshops** channel, **JS Security Testing in GitHub Actions** thread.
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
