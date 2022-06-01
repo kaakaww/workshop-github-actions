@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Node.js 14.x
         uses: actions/setup-node@v2
         with:
@@ -108,7 +108,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Node.js 14.x
         uses: actions/setup-node@v2
         with:
