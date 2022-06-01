@@ -44,9 +44,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Node.js 14.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 14
           cache: npm
       - name: Install dependencies
         run: npm install
@@ -110,9 +110,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Install Node.js 14.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 14
           cache: npm
       - name: Install dependencies
         run: npm install
