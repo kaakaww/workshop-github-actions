@@ -60,13 +60,13 @@ Go to the **Actions** section of your repository, and you should see the new wor
 
 ## Step 2: Dependency Scanning with Dependabot
 
-Go to the **Settings** section of your repo, and find the **Security & analysis** section in the left pane. Enable the **Dependency graph**, **Dependabot alerts**, and **Dependabot security updates** features in this section. Dependabot is now configured.
+Go to the **Settings** section of your repo, and find the **Code security & analysis** section in the left pane. Enable the **Dependency graph**, **Dependabot alerts**, and **Dependabot security updates** features in this section. Dependabot is now configured.
 
 Go to the **Security** section of your GitHub repo, and click into the **Dependabot alerts** on the left pane. Examine some of the dependency alerts, and see if you can resolve them.
 
 ## Step 3: Static Code Analysis with CodeQL
 
-Go to the **Security** section of your repo. Click on **Set up code scanning**. Find the **CodeQL Analysis** code scanning tool, and click **Set up this workflow**.
+Go to the **Security** section of your repo. Click on **Set up code scanning**. Click the big green button to **Configure CodeQL alerts**.
 
 Examine the GitHub Actions workflow, `.github/workflows/codeql-analysis.yml`, and commit it to the repo.
 
@@ -76,15 +76,17 @@ When CodeQL has finished, examine the results in the **Security** section under 
 
 ## Step 4: Dynamic App Scanning with StackHawk 🦅
 
-[Sign up](https://app.stackhawk.com) for a StackHawk Developer account. Follow the Get Started flow to create your StackHawk API key and first application.
+[Sign up](https://app.stackhawk.com) for a StackHawk Developer account. When prompted, select **Scan My Application**. Follow the Get Started flow to create your StackHawk API key and first application.
 
 ### Stash the API Key
 
-Stash your StackHawk API key in GitHub Secrets. In your repo, navigate to the **Settings** section, and find **Secrets** in the left pane.
+When you first log on to the StackHawk web app, it will prompt you to create and save an API key so that the scanner can send results back to the platform.
+
+Stash your new StackHawk API key in GitHub Secrets. In your repo, navigate to the **Settings** section, and find **Secrets → Actions** in the left pane.
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
 
-Complete the steps of the Create an App flow with an application name of: `vuln-node-express`, an environment of: `Development`, and a host url of: `http://localhost:3000/`.
+Complete the steps of the Create an App flow with an application name of: `vuln_node_express`, an environment of: `Development`, and a host url of: `http://localhost:3000/`.
 
 ### Commit the `stackhawk.yml` Configuration File
 
