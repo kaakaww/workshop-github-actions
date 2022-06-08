@@ -124,6 +124,9 @@ jobs:
         run: npm install
       - name: Run unit tests
         run: npm test
+        
+        ### NEW STEPS BELOW! ###
+        
       - name: Daemonize our Node API service
         run: npm run start &
       - name: Run HawkScan
