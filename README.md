@@ -78,7 +78,7 @@ When CodeQL has finished, examine the results in the **Security** section under 
 
 [Sign up](https://app.stackhawk.com) for a StackHawk Developer account. When prompted, select **Scan My Application**. Follow the Get Started flow to create your StackHawk API key and first application.
 
-### Stash the API Key
+### Create a StackHawk API Key
 
 When you first log on to the StackHawk web app, it will prompt you to create and save an API key so that the scanner can send results back to the platform.
 
@@ -86,7 +86,11 @@ Stash your new StackHawk API key in GitHub Secrets. In your repo, navigate to th
 
 Add a secret named `HAWK_API_KEY`, and add your StackHawk API key as the value.
 
-Complete the steps of the Create an App flow with an application name of: `vuln_node_express`, an environment of: `Development`, and a host url of: `http://localhost:3000/`.
+### Create your First Application in StackHawk
+
+After creating your StackHawk API key, the StackHawk web app will prompt you to create your fist app. Enter the details about your new application using the name, `vuln_node_express`, an environment of: `Development`, and a host url of: `http://localhost:3000`.
+
+For the Application Type, select **Dynamic Web Application**. And for the API Type, select **Other**.
 
 ### Commit the `stackhawk.yml` Configuration File
 
