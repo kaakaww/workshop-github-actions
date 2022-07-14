@@ -154,6 +154,16 @@ hawk:
 
 Rerun your GitHub Actions workflow, and check to make sure the scan succeeds and the Action run fails due to your new failure threshold being exceeded. Triage all high severity alerts in the StackHawk platform. After triaging all high severity alerts, you should be able to rerun the Actions workflow, and the workflow should succeed.
 
+### Link StackHawk to CodeQL (DAST + SAST)
+
+To pull your GitHub CodeQL SAST findings directly into StackHawk, install the GitHub integration!
+
+From the StackHawk integrations page, click the `GitHub CodeQL` tile > `Enable GitHub`, then follow the prompts to install the app to the same GitHub account where you forked the example repo.
+
+Next, connect your GitHub Repository to the StackHawk Application you've been scanning through StackHawk's integration management page.
+
+Rerun your GitHub Actions workflow and notice corresponding vulnerabilities getting linked directly in StackHawk's scan details!
+
 ## Workshop Complete
 
 You just automated SCA, SAST, and DAST scanning with GitHub Actions!
