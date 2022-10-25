@@ -7,7 +7,7 @@ This workshop is designed to help you get started with application security test
 * CodeQL static application security testing (SAST) scanning
 * StackHawk dynamic application security test (DAST) scanning
 
-You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1MWh_7iD6E9ygjWOjSh7XYkvWaL7GR62eIIVDerSbJnM/edit#slide=id.g1521d5b850b_0_28).
+You can find the slide deck for this workshop [here](https://docs.google.com/presentation/d/1MWh_7iD6E9ygjWOjSh7XYkvWaL7GR62eIIVDerSbJnM/).
 
 Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v=TI7E14vYWtU) on your own schedule.
 
@@ -16,8 +16,8 @@ Not attending our workshop right now? [Watch it](https://www.youtube.com/watch?v
 To get the most out of this workshop, make sure you have the following prerequisites before getting started.
 
 * Discord
-  * [Join the StackHawk Discord server](https://discord.com/invite/Ex6prPG3)!
-  * Find us in the **[#js-security-testing-in-github-actions](https://discord.com/channels/854097000261222410/940640557426946058)** channel
+  * [Join the StackHawk Discord server](https://discord.gg/XnbM52B9AU)!
+  * Find us in the **[#oct-2022-webapp-security-testing](https://discord.com/channels/854097000261222410/1017518378757394554)** channel
 * GitHub - [Sign up](https://github.com/signup) if you don't have an account
 
 ## Step 1: Continuous Integration Workflows in GitHub Actions
