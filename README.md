@@ -60,7 +60,11 @@ Go to the **Actions** section of your repository, and you should see the new wor
 
 ## Step 2: Dependency Scanning with Dependabot
 
-Go to the **Settings** section of your repo, and find the **Code security & analysis** section in the left pane. Enable the **Dependency graph**, **Dependabot alerts**, and **Dependabot security updates** features in this section. Dependabot is now configured.
+Go to the **Settings** section of your repo, and find the **Code security & analysis** section in the left pane. 
+
+Enable the **Dependency graph**, **Dependabot alerts**, and **Dependabot security updates** features in this section.
+
+Dependabot is now configured.
 
 Go to the **Security** section of your GitHub repo, and click into the **Dependabot alerts** on the left pane. Examine some of the dependency alerts, and see if you can resolve them.
 
