@@ -98,7 +98,7 @@ For the Application Type, select **Dynamic Web Application**. And for the API Ty
 
 ### Commit the `stackhawk.yml` Configuration File
 
-Download the `stackhawk.yml` file that you created in the Get Started flow in the StackHawk platform. Copy the contents into a new file at the base of your repo named `stackhawk.yml`. Commit the file.
+Copy the contents of the `stackhawk.yml` file that you created in the Get Started flow in the StackHawk platform. And then paste the contents into a new file at the base of your repo named `stackhawk.yml`. Commit the file.
 
 ### Add a StackHawk Scan to your Build and Test Workflow
 
